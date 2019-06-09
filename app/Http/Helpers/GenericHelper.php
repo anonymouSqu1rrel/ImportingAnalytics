@@ -27,6 +27,7 @@ class GenericHelper extends Controller
 	    curl_close($ch);
 	    fclose($fp);
 	}
+<<<<<<< HEAD
 
 	public static function GetApiResponse($statusCode, $stackTrace = null, $message = null, $customData = null)
 	{
@@ -40,4 +41,6 @@ class GenericHelper extends Controller
 
 		return $response;
 	}
+=======
+>>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
 }

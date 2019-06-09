@@ -51,6 +51,7 @@ class AnalyticsController extends Controller
       return "Couldn't find any funnel";
     }
   }
+<<<<<<< HEAD
 
   public static function GetAvgPerMerchantPerDay()
   {
@@ -61,4 +62,6 @@ class AnalyticsController extends Controller
     return $data;
   }
 
+=======
+>>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
 }

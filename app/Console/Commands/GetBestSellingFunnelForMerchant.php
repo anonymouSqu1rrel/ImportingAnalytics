@@ -38,6 +38,13 @@ class GetBestSellingFunnelForMerchant extends Command
     public function handle()
     {
         $idMerchant = $this->option("idMerchant");
+        if($idMerchant == null)
+        {
+            $this->error("You have to specify id Merchant!");
+            return;
+        }
+
         $this->info(\App::call('App\Http\Controllers\Api\AnalyticsController@GetBestSellingFunnelForMerchant', [$idMerchant]));
+        return;
     }
 }

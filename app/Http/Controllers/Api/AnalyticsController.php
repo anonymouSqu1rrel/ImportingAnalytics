@@ -37,7 +37,7 @@ class AnalyticsController extends Controller
 
   public static function GetBestSellingFunnelForMerchant($idMerchant)
   {
-    //since we only need query and a little bit of logic to get data I will call it from controller. If I had more logic, I would cale it from somewhre else (Service or something simillar)
+    //since we only need query and a little bit of logic to get data I will call it from controller. If I had more logic, I would call it from somewhre else (Service or something simillar)
     $data =  DB::SELECT("select funnel_id, SUM(sales_total) as allSales from daily_funnels
       where merchant_id = ? group by funnel_id order by allSales desc LIMIT 1;", [$idMerchant]);
 
@@ -51,7 +51,6 @@ class AnalyticsController extends Controller
       return "Couldn't find any funnel";
     }
   }
-<<<<<<< HEAD
 
   public static function GetAvgPerMerchantPerDay()
   {
@@ -61,7 +60,4 @@ class AnalyticsController extends Controller
     
     return $data;
   }
-
-=======
->>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
 }

@@ -19,7 +19,7 @@ class ImportCSVsService extends Controller
 {
   public static function ParseAndInsertDailyMerchants($mySaveDir, $filename)
   {
-    $url = "https://app.periscopedata.com/api/carthook/chart/csv/d5345630-811c-cd5a-b3e2-c4a6ac1dae1a/265769"; //TODO: check if exists al neki
+    $url = "https://app.periscopedata.com/api/carthook/chart/csv/d5345630-811c-cd5a-b3e2-c4a6ac1dae1a/265769"; 
     $completeSaveLoc = $mySaveDir . $filename;
     GenericHelper::DownloadFile($url, $completeSaveLoc); //download file so you can read it line by line later
     ImportCSVsHelper::ImportCsv("DailyMerchants", 5000, $completeSaveLoc);
@@ -27,7 +27,7 @@ class ImportCSVsService extends Controller
 
   public static function ParseAndInsertHourlyMerchants($mySaveDir, $filename)
   {
-    $url = "https://app.periscopedata.com/api/carthook/chart/csv/5ab06803-29bf-76b2-6a5a-ad7cf4b7fc21/284541"; //TODO: check if exists al neki
+    $url = "https://app.periscopedata.com/api/carthook/chart/csv/5ab06803-29bf-76b2-6a5a-ad7cf4b7fc21/284541"; 
     $completeSaveLoc = $mySaveDir . $filename;
     GenericHelper::DownloadFile($url, $completeSaveLoc); //download file so you can read it line by line later
     ImportCSVsHelper::ImportCsv("HourlyMerchants", 5000, $completeSaveLoc);
@@ -35,7 +35,7 @@ class ImportCSVsService extends Controller
 
   public static function ParseAndInsertHourlyFunnels($mySaveDir, $filename)
   {
-    $url = "https://app.periscopedata.com/api/carthook/chart/csv/b5798a66-e694-a429-cc5e-2f9e163f6438/284541"; //TODO: check if exists al neki
+    $url = "https://app.periscopedata.com/api/carthook/chart/csv/b5798a66-e694-a429-cc5e-2f9e163f6438/284541"; 
     $completeSaveLoc = $mySaveDir . $filename;
     GenericHelper::DownloadFile($url, $completeSaveLoc); //download file so you can read it line by line later
     ImportCSVsHelper::ImportCsv("HourlyFunnels", 5000, $completeSaveLoc);
@@ -43,7 +43,7 @@ class ImportCSVsService extends Controller
 
   public static function ParseAndInsertDailyFunnels($mySaveDir, $filename)
   {
-    $url = "https://app.periscopedata.com/api/carthook/chart/csv/b3bb3bbd-0ea3-8234-64bd-3cb474631c30/284541"; //TODO: check if exists al neki
+    $url = "https://app.periscopedata.com/api/carthook/chart/csv/b3bb3bbd-0ea3-8234-64bd-3cb474631c30/284541"; 
     $completeSaveLoc = $mySaveDir . $filename;
     GenericHelper::DownloadFile($url, $completeSaveLoc); //download file so you can read it line by line later
     ImportCSVsHelper::ImportCsv("DailyFunnels", 5000, $completeSaveLoc);

@@ -22,10 +22,10 @@ class ImportCSVsHelper extends Controller
 		$table = 'App\\' . $table;
 
 		$file = fopen($completeSaveLoc, 'r');
+
 	    $dataForImport = [];        
 
 	    $batchCount = 1;
-<<<<<<< HEAD
 	    $columns = fgetcsv($file);
      	$countColumn = count($columns) - 1;
      	
@@ -46,32 +46,6 @@ class ImportCSVsHelper extends Controller
 	        }
 	        $batchCount++;
       	}
-	    
-=======
-	    if(1) //escape or something
-	    {
-	      $columns = fgetcsv($file);
-	      $countColumn = count($columns) - 1;
-	      while (($line = fgetcsv($file)) !== false) 
-	      {
-	         $tmp = [];
-	         for($i = 0; $i <= $countColumn; $i++)
-	         {
-	            $tmp[$columns[$i]] = $line[$i];
-	         }
-
-	         $dataForImport[] = $tmp;
-	        if($batchCount >= $batchNumber)
-	        {
-	          $table::insert($dataForImport);
-	          $dataForImport = [];
-	          $batchCount = 0;
-	        }
-	        $batchCount++;
-	        
-	      }
-	    }
->>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
 	    $table::insert($dataForImport);
 	    fclose($file); 
 	    unlink($completeSaveLoc);   

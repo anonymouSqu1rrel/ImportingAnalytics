@@ -12,26 +12,15 @@ use Response;
 use DateTime;
 use DB; 
 use App\Http\Services\ImportCSVsService;
-<<<<<<< HEAD
 use App\Http\Helpers\GenericHelper;
-=======
->>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
 
 class ImportCSVsController extends Controller
 {
   public function index($type)
   {
-<<<<<<< HEAD
-    try
-    {
-      $mySaveDir = "../CSVs/";
-
-=======
-
     $mySaveDir = "../CSVs/";
     try
     {
->>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
       switch ($type) { //specify type to import desired csv. This can help in case we need to import only one file, not all of them (for example, if one CSV is not available at time of import)
         case 'all':
           ImportCSVsService::ParseAndInsertDailyMerchants($mySaveDir, "dailyMerchant");
@@ -40,7 +29,6 @@ class ImportCSVsController extends Controller
           ImportCSVsService::ParseAndInsertDailyFunnels($mySaveDir, "dailyFunnels");
           ImportCSVsService::GenerateMerchantTable();
           break;
-<<<<<<< HEAD
         case 'dailyMerchant':
           ImportCSVsService::ParseAndInsertDailyMerchants($mySaveDir, "dailyMerchant");
           break;
@@ -61,23 +49,12 @@ class ImportCSVsController extends Controller
           break;
 
       }
-       return response()->json(GenericHelper::GetApiResponse(200));
-    } catch (Throwable  $e)
+      
+      return response()->json(GenericHelper::GetApiResponse(200));
+    } 
+    catch (Throwable  $e)
     {
       return response()->json(GenericHelper::GetApiResponse(500, $e->getTraceAsString(), $e->getMessage()));
-=======
-        
-        default:
-          abort(500, 'Wrong type specified!');
-          break;
-      }
-
-    } catch (Throwable  $e)
-    {
-      dd($e);
->>>>>>> a57ba4ecc88a12aff9abdc7479442a3def80f5e8
     }
   }
-
-
 }
